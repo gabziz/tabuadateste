@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1651/1651618.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+
+    <script>
+        function gerarTabuada() {
+            var numero = parseInt(document.getElementById('numero').value);
+
+            var tabela = document.getElementById('tabela-tabuada');
+
+            tabela.innerHTML = '';
+
+
+            for (var i = 1; i <= 10; i++) {
+                var resultado = numero * i;
+                var linha = '<tr><td><hr>' + numero + ' x ' + i + ' = ' + '<span>' + resultado + '</span>' + '</td> </tr>'
+                tabela.innerHTML += linha
+            }
+
+        }
+    </script>
+
+</head>
+<body>
+    <header id="head">
+        <h1>TABUADA</h1>
+        <button id="toggle-mode"><img src="https://cdn-icons-png.flaticon.com/512/5064/5064965.png"></button>
+        
+    </header>
+    
+    <div class="recebe">
+        <p>Digite um valor para gerar a sua tabela: </p>
+
+        <input type="text" id="numero"> 
+        <br>
+        <button onclick="gerarTabuada()">Gerar Tabuada</button>
+    </div>
+    <table id="tabela-tabuada"></table>
+
+    <script>
+        const toggleBtn = document.getElementById('toggle-mode');
+        const body = document.body;
+        const header = document.getElementById('head');
+
+        toggleBtn.addEventListener('click', function(){
+            body.classList.toggle('dark-mode');
+            header.classList.toggle('dark-mode-header');
+            
+        })
+    </script>
+
+    
+    <footer>
+        
+        <p>Created by Gabrielle Lourenço | &copy Conheça mais sobre mim</p>
+   
+        <ul class="icons">
+            <li><a href="https://instagram.com/gabz_moreira_?igshid=YmMyMTA2M2Y="><img src="img/icons8-instagram-96.png"></a></li>
+            <li><a href="https://github.com/gabziz?tab=repositories"><img src="img/icons8-github-96.png"></a></li>
+            <li><a href="https://www.linkedin.com/in/gabrielle-louren%C3%A7o-moreira-b9b6a6259/"><img src="img/icons8-linkedin-circundado-90.png"></a></li>
+        </ul>
+    
+        </footer>
+</body>
+</html>
